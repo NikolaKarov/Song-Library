@@ -1,5 +1,6 @@
 import { html } from "../../node_modules/lit-html/lit-html.js";
 import { register } from "../api/data.js";
+import notify from "./notify.js";
 
 const regTemplate = (onSubmit) => html` <div class="login">
   <div class="login-page">
@@ -22,17 +23,21 @@ export async function registerPage(ctx) {
   async function onSubmit(e) {
     e.preventDefault();
 
-    const note = document.getElementById("msgField");
     const formData = new FormData(e.target);
     const username = formData.get("username");
     const password = formData.get("password");
     const rePass = formData.get("repass");
 
     if (username == "" || password == "" || rePass == "") {
-      return alert("All fields required.");
+      return notify("All fields are required.");
+    }
+
+    if (password != rePass) {
+      return notify("Passwords don't match.");
     }
 
     await register(`${username}@123.123`, username, password);
     ctx.page.redirect("/catalogue");
+    ctx.setNavigation();
   }
 }

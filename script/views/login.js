@@ -1,5 +1,6 @@
 import { html } from "../../node_modules/lit-html/lit-html.js";
 import { login } from "../api/data.js";
+import notify from "./notify.js";
 
 const logTemplate = (onSubmit) => html`<div class="login">
   <div class="login-page">
@@ -21,13 +22,12 @@ export async function loginPage(ctx) {
   async function onSubmit(e) {
     e.preventDefault();
 
-    const note = document.getElementById("msgField");
     const formData = new FormData(e.target);
     const username = formData.get("username");
     const password = formData.get("password");
 
     if (username == "" || password == "") {
-      return alert("All fields required.");
+      return notify("All fields are required.");
     }
 
     await login(username, password);
