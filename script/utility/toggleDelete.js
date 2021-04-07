@@ -1,4 +1,5 @@
 import { deleteSong, deleteArtist } from "../api/data.js";
+import populateCounters from "./counters.js";
 
 export default function toggleDelete() {
   const deleteBtn = document.getElementById("deleteBtn");
@@ -22,15 +23,23 @@ async function onDelete(e) {
   const { target } = e;
 
   if (target.id == "songName") {
-    await deleteSong(target.dataset.id);
-    target.remove();
+    const confirmed = confirm("Are you sure you want to delete this item?");
+    if (confirmed) {
+      await deleteSong(target.dataset.id);
+      target.remove();
+      populateCounters();
+    }
   }
 
   if (target.classList.contains("accordion")) {
-    await deleteArtist(target.dataset.id);
-    const songList = [...target.nextElementSibling.querySelector("#songList").children].map((x) => x.dataset.id);
-    songList.forEach((s) => deleteSong(s));
-    target.nextElementSibling.remove();
-    target.remove();
+    const confirmed = confirm("Are you sure you want to delete this item?");
+    if (confirmed) {
+      await deleteArtist(target.dataset.id);
+      const songList = [...target.nextElementSibling.querySelector("#songList").children].map((x) => x.dataset.id);
+      songList.forEach((s) => deleteSong(s));
+      target.nextElementSibling.remove();
+      target.remove();
+      populateCounters();
+    }
   }
 }

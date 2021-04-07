@@ -97,13 +97,16 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;    */
     font-family: 'Courier New', monospace;
+    background-color: rgb(220, 220, 220);
+
   }
   
   /* body {
       font-family: 'Courier New', monospace;
     } */
   .common {
-      background-color: #eee;
+      background-color: rgb(220, 220, 220);
+      /* #eee */
       padding: 10px;
       text-align: center;
       margin: 0;
@@ -124,7 +127,8 @@
     font-size: 22px;
   }
   .accordion {
-      background-color: #eee;
+      background-color: rgb(220, 220, 220);
+      /* #eee */
       color: #444;
       cursor: pointer;
       padding: 10px;
@@ -133,11 +137,13 @@
       border: none;
       outline: none;
       transition: 600ms;
-      font-size: 22px;
+      font-size: 24px;
+    border: 1px outset rgb(235, 235, 235);
+
     }
     
   .active, .accordion:hover {
-      background-color: #ccc;
+      background-color: rgb(245, 245, 245);
     }
     
   .panel {

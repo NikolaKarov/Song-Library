@@ -46,5 +46,5 @@ export async function cataloguePage(ctx) {
 
   ctx.render(catalogueTemplate(onArtistSubmit, onSongSubmit, accordionEvent, artists, songs));
 
-  populateCounters(artists, songs);
+  populateCounters();
 }
