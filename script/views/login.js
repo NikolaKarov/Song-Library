@@ -1,5 +1,4 @@
 import { html } from "../../node_modules/lit-html/lit-html.js";
-import { popUpMessage } from "../utility.js";
 import { login } from "../api/data.js";
 
 const logTemplate = (onSubmit) => html`<div class="login">
@@ -28,7 +27,7 @@ export async function loginPage(ctx) {
     const password = formData.get("password");
 
     if (username == "" || password == "") {
-      return popUpMessage(note, "All fields required.", "red", 3000);
+      return alert("All fields required.");
     }
 
     await login(username, password);

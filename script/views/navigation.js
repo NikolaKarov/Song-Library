@@ -1,6 +1,7 @@
 import { html, render } from "../../node_modules/lit-html/lit-html.js";
 import page from "../../node_modules/page/page.mjs";
-import { toggleAdd, toggleDelete } from "../utility.js";
+import toggleAdd from "../utility/toggleAdd.js";
+import toggleDelete from "../utility/toggleDelete.js";
 
 import { logout } from "../api/data.js";
 

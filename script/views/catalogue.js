@@ -1,6 +1,9 @@
 import { html } from "../../node_modules/lit-html/lit-html.js";
 import { getArtists, getSongs } from "../api/data.js";
-import { onArtistSubmit, onSongSubmit, accordionEvent } from "../utility.js";
+import onSongSubmit from "../utility/songSubmit.js";
+import onArtistSubmit from "../utility/artistSubmit.js";
+import accordionEvent from "../utility/accordion.js";
+import populateCounters from "../utility/counters.js";
 
 const catalogueTemplate = (onArtistSubmit, onSongSubmit, accordionEvent, artists, songs) => html` <div id="accordions">
     ${artists.map((a) =>
@@ -41,4 +44,6 @@ export async function cataloguePage(ctx) {
   const [artists, songs] = await Promise.all([getArtists(), getSongs()]);
 
   ctx.render(catalogueTemplate(onArtistSubmit, onSongSubmit, accordionEvent, artists, songs));
+
+  populateCounters(artists, songs);
 }

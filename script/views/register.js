@@ -29,7 +29,7 @@ export async function registerPage(ctx) {
     const rePass = formData.get("repass");
 
     if (username == "" || password == "" || rePass == "") {
-      return popUpMessage(note, "All fields required.", "red", 3000);
+      return alert("All fields required.");
     }
 
     await register(`${username}@123.123`, username, password);
