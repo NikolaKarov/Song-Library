@@ -7,7 +7,7 @@ export default async function onArtistSubmit(e) {
   e.preventDefault();
 
   const formData = new FormData(e.target);
-  const artist = formData.get("artist");
+  const artist = formData.get("artist").trim();
   const allArtists = [...document.querySelectorAll(".accordion")].map((x) => x.textContent.trim());
 
   if (allArtists.includes(artist)) {

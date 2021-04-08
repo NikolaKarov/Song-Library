@@ -8,7 +8,7 @@ export default async function onSongSubmit(e) {
 
   const formData = new FormData(e.target);
   const artist = formData.get("artist");
-  const song = formData.get("song");
+  const song = formData.get("song").trim();
   const songList = e.target.previousElementSibling;
   const allSongs = [...songList.querySelectorAll("#songName")].map((x) => x.textContent);
 

@@ -138,7 +138,7 @@
       outline: none;
       transition: 600ms;
       font-size: 24px;
-    border: 1px outset rgb(235, 235, 235);
+      border: 1px outset rgb(235, 235, 235);
 
     }
     
@@ -154,9 +154,9 @@
       text-align: center;
     }
   .button {
-      background-color: #4CAF50; /* Green */
-      border: none;
-      color: white;
+      background-color: rgb(203, 245, 198); /* Green */
+      border: 1px solid rgb(110, 110, 110);
+      color: black;
       padding: 4px 10px;
       text-align: center;
       text-decoration: none;
@@ -170,9 +170,9 @@
       transition: 600ms;
   }
   .songButton {
-      background-color: #4c93af;
-      border: none;
-      color: white;
+      background-color: #bad5f5;
+      border: 1px solid rgb(110, 110, 110);
+      color: black;
       padding: 4px 10px;
       text-align: center;
       text-decoration: none;
@@ -181,8 +181,8 @@
       border-radius: 5px;
   }
   .signoutButton{
-    background-color: #9cc0e9;
-    border: 1px solid black;
+    background-color: #bad5f5;
+    border: 1px solid rgb(110, 110, 110);
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -192,7 +192,7 @@
 
   }
   #deleteBtn {
-    border: 1px solid black;
+    border: 1px solid rgb(110, 110, 110);
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -203,7 +203,7 @@
   }
   #addBtn {
     background-color: rgb(203, 245, 198);
-    border: 1px solid black;
+    border: 1px solid rgb(110, 110, 110);
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -252,4 +252,40 @@
 
 #errorBox>span {
     background: rgb(255, 141, 84);
+}
+.home-page {
+  width: 500px;
+  padding: 4% 0 0;
+  margin: auto;
+  position: absolute;
+  left: 26%
+}
+.homeMsg {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  width: 900px;
+  margin: 0 auto 100px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.homeMsg button {
+  position: relative;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 35%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 18px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin: 10px;
+}
+.homeMsg button:hover,.homeMsg button:active,.homeMsg button:focus {
+  background: #43A047;
 }

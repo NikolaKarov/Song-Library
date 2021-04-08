@@ -31,7 +31,7 @@ export function setNavigation() {
 
   async function onLogout() {
     await logout();
-    page.redirect("/login");
+    page.redirect("/home");
     setNavigation();
   }
 }
